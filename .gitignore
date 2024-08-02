@@ -1,0 +1,9 @@
+catboost_info/
+checkpoints/
+wandb/
+aws/
+cache/
+lightning_logs/
+bins/
+data/
+.ipynb_checkpoints/
