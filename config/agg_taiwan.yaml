@@ -1,0 +1,27 @@
+seq_encoder:
+    _target_: ptls.nn.AggFeatureSeqEncoder
+    embeddings: 
+        PAY: 
+          in: 11
+        SEX: 
+          in: 2
+        EDUCATION: 
+          in: 7
+        MARRIAGE: 
+          in: 4
+        AGE: 
+          in: 56
+        BILL_AMT: 
+          in: 277
+        PAY_AMT: 
+          in: 91
+        LIMIT_BAL: 
+          in: 35
+    numeric_values: 
+        SEX: '#ones'
+
+trainer:
+  gpus: 0
+  auto_select_gpus: false
+  max_epochs: 30
+  deterministic: true

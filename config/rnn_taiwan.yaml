@@ -1,0 +1,44 @@
+seq_encoder:
+    _target_: ptls.nn.RnnSeqEncoder
+    trx_encoder: 
+      _target_: ptls.nn.TrxEncoder
+      norm_embeddings: false
+      embeddings_noise: 0.003
+      embeddings: 
+        PAY: 
+          in: 11
+          out: 2
+        SEX: 
+          in: 2
+          out: 2
+        EDUCATION: 
+          in: 7
+          out: 2
+        MARRIAGE: 
+          in: 4
+          out: 2
+        AGE: 
+          in: 56
+          out: 8
+        BILL_AMT: 
+          in: 277
+          out: 32
+        PAY_AMT: 
+          in: 91
+          out: 16
+        LIMIT_BAL: 
+          in: 35
+          out: 8
+    type: gru
+    hidden_size: 1024
+    bidir: false
+    trainable_starter: static
+
+trainer:
+  gpus: 0
+  auto_select_gpus: false
+  max_epochs: 30
+  deterministic: true
+  
+  
+  
